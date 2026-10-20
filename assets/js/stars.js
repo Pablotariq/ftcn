@@ -38,9 +38,15 @@ const updateStars = () => {
 };
 
 const updateReleaseTitles = () => {
-  document.querySelectorAll(".release-title").forEach((title) => {
+  document.querySelectorAll(".release-title, .mixes-column a > span:first-child").forEach((title) => {
     const fullText = title.dataset.fullText || title.textContent;
     title.dataset.fullText = fullText;
+
+    const isMixTitle = title.matches(".mixes-column a > span:first-child");
+    if (isMixTitle && window.matchMedia("(max-width: 700px)").matches) {
+      title.textContent = fullText;
+      return;
+    }
 
     const availableWidth = title.getBoundingClientRect().width;
     const measure = title.cloneNode();
