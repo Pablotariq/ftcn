@@ -244,10 +244,7 @@ body.eventos-page .nav-logo {
 
 .about-layout {
   box-sizing: border-box;
-  display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: 3rem;
-  align-items: center;
+  display: block;
   width: 100%;
   max-width: 100%;
   margin: 0 0 3rem;
@@ -269,7 +266,9 @@ body:has(.about-layout) {
 }
 
 .about-text {
-  margin-left: 6rem;
+  width: 600px;
+  max-width: none;
+  margin-left: 100px;
 }
 
 .about-image {
@@ -284,6 +283,12 @@ body:has(.about-layout) {
   visibility: visible;
   opacity: 1;
   object-fit: contain;
+}
+
+@media (min-width: 701px) and (max-width: 1200px) {
+  .about-text {
+    margin-left: clamp(10px, calc(100vw - 1050px), 100px);
+  }
 }
 
 .site-credit {
@@ -570,7 +575,7 @@ h1 {
   display: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   body {
     --mobile-header-size: clamp(17px, 3.8vw, 22px);
     font-size: var(--mobile-header-size);
