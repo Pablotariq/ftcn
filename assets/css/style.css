@@ -446,7 +446,11 @@ body:has(.mixes-content) {
 
   .mixes-content {
     width: calc(100% - 20px);
-    margin: 1rem 10px 3rem;
+    margin: 1.5rem 10px 3rem;
+  }
+
+  .releases-grid {
+    margin-top: 1.5rem;
   }
 
   .mixes-columns {
