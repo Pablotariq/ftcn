@@ -107,14 +107,22 @@ const createMobileNavigation = () => {
     rowPages.forEach(([label, href], index) => {
       if (index > 0) {
         const separator = document.createElement("span");
-        separator.textContent = "/";
+        separator.textContent = "/*/";
         separator.setAttribute("aria-hidden", "true");
         row.append(separator);
       }
 
       const link = document.createElement("a");
       link.href = href;
-      link.textContent = label;
+      if (href === currentPage) {
+        const logo = document.createElement("img");
+        logo.src = "assets/images/ftcnlogo.png";
+        logo.alt = label;
+        logo.className = "mobile-navigation-logo";
+        link.replaceChildren(logo);
+      } else {
+        link.textContent = label;
+      }
       row.append(link);
     });
 
