@@ -233,9 +233,9 @@ body.eventos-page .nav-logo {
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   align-items: center;
-  margin left: 10px;
+  margin-left: 10px;
   width: calc(100vw - 40px);
-  margin: 0 3px 3rem;
+  margin: 0 3rem 3rem;
 }
 
 .about-text h1 {
