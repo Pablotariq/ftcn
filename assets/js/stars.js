@@ -81,57 +81,6 @@ const updateReleaseTitles = () => {
 
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
-const createMobileNavigation = () => {
-  const navigation = document.createElement("nav");
-  navigation.className = "mobile-navigation";
-  navigation.setAttribute("aria-label", "Main navigation");
-
-  const pages = [
-    [
-      ["about", "about.html"],
-      ["releases", "releases.html"],
-      ["editorial", "editorial.html"],
-    ],
-    [
-      ["eventos", "eventos.html"],
-      ["mixes", "mixes.html"],
-      ["merch", "merch.html"],
-      ["contact", "mailto:info@ftcnediciones.es"],
-    ],
-  ];
-
-  pages.forEach((rowPages) => {
-    const row = document.createElement("div");
-    row.className = "mobile-navigation-row";
-
-    rowPages.forEach(([label, href], index) => {
-      if (index > 0) {
-        const separator = document.createElement("span");
-        separator.textContent = "/*/";
-        separator.setAttribute("aria-hidden", "true");
-        row.append(separator);
-      }
-
-      const link = document.createElement("a");
-      link.href = href;
-      if (href === currentPage) {
-        const logo = document.createElement("img");
-        logo.src = "assets/images/ftcnlogo.png";
-        logo.alt = label;
-        logo.className = "mobile-navigation-logo";
-        link.replaceChildren(logo);
-      } else {
-        link.textContent = label;
-      }
-      row.append(link);
-    });
-
-    navigation.append(row);
-  });
-
-  document.body.prepend(navigation);
-};
-
 document.querySelectorAll("h1 a").forEach((link) => {
   const linkPage = link.href.startsWith("mailto:")
     ? "contact.html"
@@ -160,7 +109,6 @@ document.querySelectorAll("h1 a:not(.logo-link)").forEach((link) => {
   link.replaceChildren(...letters);
 });
 
-createMobileNavigation();
 updateStars();
 updateReleaseTitles();
 window.addEventListener("resize", () => {
