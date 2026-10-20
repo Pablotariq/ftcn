@@ -109,6 +109,59 @@ document.querySelectorAll("h1 a:not(.logo-link)").forEach((link) => {
   link.replaceChildren(...letters);
 });
 
+const createMobileHeader = () => {
+  const header = document.createElement("header");
+  header.className = "mobile-header";
+
+  const toggle = document.createElement("button");
+  toggle.className = "mobile-header-toggle";
+  toggle.type = "button";
+  toggle.setAttribute("aria-expanded", "false");
+  toggle.setAttribute("aria-controls", "mobile-navigation");
+
+  const logo = document.createElement("img");
+  logo.src = "assets/images/ftcnlogo.png";
+  logo.alt = "Open navigation";
+  toggle.append(logo);
+
+  const navigation = document.createElement("nav");
+  navigation.id = "mobile-navigation";
+  navigation.className = "mobile-navigation";
+  navigation.setAttribute("aria-label", "Main navigation");
+
+  const links = [...document.querySelectorAll("h1 a")];
+  const pageLinks = links
+    .filter((link) => !link.classList.contains("logo-link"))
+    .map((link) => ({
+      href: link.href,
+      label: link.textContent.trim(),
+    }));
+
+  if (currentPage !== "index.html") {
+    pageLinks.push({
+      href: `${currentPage}`,
+      label: currentPage.replace(".html", ""),
+    });
+  }
+
+  pageLinks.forEach(({ href, label }) => {
+    const link = document.createElement("a");
+    link.href = href;
+    link.textContent = label;
+    navigation.append(link);
+  });
+
+  toggle.addEventListener("click", () => {
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!isOpen));
+    navigation.classList.toggle("is-open", !isOpen);
+  });
+
+  header.append(toggle, navigation);
+  document.body.prepend(header);
+};
+
+createMobileHeader();
 updateStars();
 updateReleaseTitles();
 window.addEventListener("resize", () => {
