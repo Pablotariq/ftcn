@@ -109,6 +109,42 @@ document.querySelectorAll("h1 a:not(.logo-link)").forEach((link) => {
   link.replaceChildren(...letters);
 });
 
+/*
+const setupMobileNavigation = () => {
+  const navigation = document.querySelector(".mobile-navigation");
+
+  if (!navigation) {
+    return;
+  }
+
+  const toggle = document.createElement("button");
+  toggle.className = "mobile-navigation-toggle";
+  toggle.type = "button";
+  toggle.setAttribute("aria-expanded", "false");
+  toggle.setAttribute("aria-controls", "mobile-navigation-menu");
+
+  const logo = document.createElement("img");
+  logo.src = "assets/images/ftcnlogo.png";
+  logo.alt = "Open navigation";
+  toggle.append(logo);
+  navigation.id = "mobile-navigation-menu";
+  navigation.parentElement.insertBefore(toggle, navigation);
+
+  const activeLogo = navigation.querySelector(".mobile-navigation-logo");
+  if (activeLogo) {
+    const activeLink = activeLogo.parentElement;
+    activeLink.textContent = activeLogo.alt;
+  }
+
+  toggle.addEventListener("click", () => {
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!isOpen));
+    navigation.classList.toggle("is-open", !isOpen);
+  });
+};
+
+setupMobileNavigation();
+*/
 updateStars();
 updateReleaseTitles();
 window.addEventListener("resize", () => {
