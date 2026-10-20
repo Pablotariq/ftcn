@@ -81,6 +81,10 @@ const updateReleaseTitles = () => {
 
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
+document.querySelectorAll(".mobile-navigation-logo").forEach((logo) => {
+  logo.parentElement.href = "index.html";
+});
+
 document.querySelectorAll("h1 a").forEach((link) => {
   const linkPage = link.href.startsWith("mailto:")
     ? "contact.html"

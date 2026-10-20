@@ -419,19 +419,18 @@ body:has(.mixes-content) {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     width: 100%;
-    margin: 0;
+    margin: 1rem 0 0;
   }
 
   .about-text {
     width: calc(100% - 20px);
-    margin: 0 10px;
+    margin: 0.5rem 10px 0;
    font-size: clamp(17px, 3.8vw, 22px);
     line-height: 1.05;
   }
 
   .about-text > p:first-child {
     margin: 0;
-    white-space: pre-line;
   }
 
   .about-text > p:last-child {
@@ -442,7 +441,7 @@ body:has(.mixes-content) {
   .about-image {
     width: calc(100% - 20px);
     height: auto;
-    margin: 0 10px;
+    margin: 0.5rem 10px 0;
   }
 
   .mixes-content {
@@ -552,6 +551,7 @@ h1 {
     width: calc(100% - 20px);
     max-width: calc(100vw - 20px);
     margin: 0 10px;
+    margin-top: 0.25rem;
     line-height: 1.25em;
     font-size: var(--mobile-header-size);
   }
@@ -574,10 +574,11 @@ h1 {
 
   .mobile-navigation-logo {
     display: inline-block;
-    width: 2.25em;
-    height: 1.25em;
+    width: 2.59em;
+    height: 1.15em;
     object-fit: contain;
-    vertical-align: middle;
+    vertical-align: baseline;
+    transform: translateY(0.15em);
   }
 
   body.releases-page .mobile-navigation-logo,
