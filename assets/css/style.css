@@ -21,7 +21,7 @@ body {
 .stamped-logo {
   position: fixed;
   z-index: 3;
-  width: min(140px, 20vw);
+  width: min(112px, 16vw);
   height: auto;
   pointer-events: none;
   transform: translate(-50%, -50%);
