@@ -35,17 +35,110 @@
     </nav>
 
    
-    <section class="releases-grid eventos-grid" aria-label="Event artwork">
-      <img src="assets/images/EVENTOS/1- SONXFTCN=ESPACIOLIBRE.jpg" alt="Son x FTCN Espacio Libre event artwork" />
-      <img src="assets/images/EVENTOS/2 - FTCNXRNR.jpg" alt="FTCN x RNR event artwork" />
-      <img src="assets/images/EVENTOS/3 - FTCN X PERPEN FLAT.jpg" alt="FTCN x Perpen Flat event artwork" />
-      <img src="assets/images/EVENTOS/4 -FTCN X MUSIK MATTIN copia.jpg" alt="FTCN x Musik Mattin event artwork" />
-      <img src="assets/images/EVENTOS/5 -SONXFTCN=ESPACIOLIBRE_2025.jpg" alt="Son x FTCN Espacio Libre 2025 event artwork" />
-      <img src="assets/images/EVENTOS/6 - FTCNEDICIONES.jpg" alt="FTCN Ediciones event artwork" />
-      <img src="assets/images/EVENTOS/7 -SON X FTCN.jpeg" alt="Son x FTCN event artwork" />
+    <section class="events-layout" aria-label="Event artwork">
+      <ul class="event-list" aria-label="Event titles">
+        <details class="event-item active" data-image="assets/images/EVENTOS/event1.jpg" data-title="South Of North x F.T.C.N: Espacio Libre 1 @ ISO, Amsterdam OCT 2026" data-mobile-title="South Of North x F.T.C.N: Espacio Libre 1 @ ISO" data-mobile-meta="Amsterdam OCT 2026">
+          <summary><span class="event-name">South Of North x F.T.C.N: Espacio Libre 2</span><span class="event-meta">@ ISO, Amsterdam OCT 2026</span></summary>
+        </details>
+        <details class="event-item" data-image="assets/images/EVENTOS/event2.jpg" data-title="Tour Sofoquina x F.T.C.N, Spain OCT 2026" data-mobile-meta="Spain OCT 2026">
+          <summary><span class="event-name">Tour Sofoquina x F.T.C.N</span><span class="event-meta">@ Spain OCT 2026</span></summary>
+        </details>
+        <details class="event-item" data-image="assets/images/EVENTOS/event3.jpg" data-title="Fetuxini @ Fase Rem, Mallorca AUG 2026" data-mobile-title="Fetuxini @ Fase Rem" data-mobile-meta="Mallorca AUG 2026">
+          <summary><span class="event-name">Fetuxini</span><span class="event-meta">@ Fase Rem, Mallorca AUG 2026</span></summary>
+        </details>
+        <details class="event-item" data-image="assets/images/EVENTOS/event4.jpg" data-title="Real No Real x F.T.C.N @ Lasocacion, Madrid JUN 2026" data-mobile-title="Real No Real x F.T.C.N @ Lasocacion" data-mobile-meta="Madrid JUN 2026">
+          <summary><span class="event-name">Real No Real x F.T.C.N</span><span class="event-meta">@ Lasocacion, Madrid JUN 2026</span></summary>
+        </details>
+        <details class="event-item" data-image="assets/images/EVENTOS/event5.jpg" data-title="Espacio Perpendicular x F.T.C.N, Madrid APR 2026" data-mobile-title="Espacio Perpendicular x F.T.C.N" data-mobile-meta="Madrid APR 2026">
+          <summary><span class="event-name">Espacio Perpendicular x F.T.C.N</span><span class="event-meta">@ Madrid APR 2026</span></summary>
+        </details>
+        <details class="event-item" data-image="assets/images/EVENTOS/event6.jpg" data-title="Musik Mattin x F.T.C.N @ Lasociacion, Madrid JAN 2026" data-mobile-title="Musik Mattin x F.T.C.N @ Lasociacion" data-mobile-meta="Madrid JAN 2026">
+          <summary><span class="event-name">Musik Mattin x F.T.C.N</span><span class="event-meta">@ Lasociacion, Madrid JAN 2026</span></summary>
+        </details>
+        <details class="event-item" data-image="assets/images/EVENTOS/event7.jpg" data-title="South Of North x F.T.C.N: Espacio Libre 1 @ ISO, Amsterdam JUL 2025" data-mobile-title="South Of North x F.T.C.N: Espacio Libre 1 @ ISO" data-mobile-meta="Amsterdam JUL 2025">
+          <summary><span class="event-name">South Of North x F.T.C.N: Espacio Libre 1</span><span class="event-meta">@ ISO, Amsterdam JUL 2025</span></summary>
+        </details>
+        <details class="event-item" data-image="assets/images/EVENTOS/event8.jpg" data-title="F.T.C.N Ediciones @ Espacio Monederos, Madrid JAN 2025" data-mobile-title="F.T.C.N Ediciones @ Espacio Monederos" data-mobile-meta="Madrid JAN 2025">
+          <summary><span class="event-name">F.T.C.N Ediciones</span><span class="event-meta">@ Espacio Monederos, Madrid JAN 2025</span></summary>
+        </details>
+        <details class="event-item" data-image="assets/images/EVENTOS/event9.jpg" data-title="South Of North x F.T.C.N @ ISO, Amsterdam OCT 2024" data-mobile-title="South Of North x F.T.C.N @ ISO" data-mobile-meta="Amsterdam OCT 2024">
+          <summary><span class="event-name">South Of North x F.T.C.N</span><span class="event-meta">@ ISO, Amsterdam OCT 2024</span></summary>
+        </details>
+        <details class="event-item" data-image="assets/images/EVENTOS/event10.jpg" data-title="F.T.C.N Ediciones @ Het Schip (Fanfare), Amsterdam JUN 2024" data-mobile-title="F.T.C.N Ediciones @ Het Schip (Fanfare)" data-mobile-meta="Amsterdam JUN 2024">
+          <summary><span class="event-name">F.T.C.N Ediciones</span><span class="event-meta">@ Het Schip (Fanfare), Amsterdam JUN 2024</span></summary>
+        </details>
+      </ul>
+
+      <div class="event-poster-frame">
+        <img id="event-poster" src="assets/images/EVENTOS/event1.jpg" alt="South Of North x F.T.C.N: Espacio Libre 1 @ ISO, Amsterdam OCT 2026" />
+      </div>
+      <details id="event-caption" class="event-caption" aria-live="polite">
+        <summary id="event-caption-summary">
+          <span id="event-caption-title"></span>
+          <span id="event-caption-title-rest"></span>
+          <span id="event-caption-meta"></span>
+        </summary>
+      </details>
     </section>
     <script src="assets/js/stars.js"></script>
+    <script>
+      const poster = document.getElementById('event-poster');
+      const captionTitle = document.getElementById('event-caption-title');
+      const captionTitleRest = document.getElementById('event-caption-title-rest');
+      const captionMeta = document.getElementById('event-caption-meta');
+      const items = [...document.querySelectorAll('.event-item')];
+      let currentIndex = 0;
+
+      function setActiveItem(item) {
+        items.forEach((entry) => entry.classList.toggle('active', entry === item));
+        if (!item) return;
+        currentIndex = items.indexOf(item);
+        poster.src = item.dataset.image;
+        poster.alt = item.dataset.title;
+
+        const title = item.dataset.mobileTitle || item.querySelector('.event-name')?.textContent || '';
+        const meta = item.dataset.mobileMeta || '';
+        const titleParts = title.split(': ');
+
+        if (captionTitle) {
+          captionTitle.textContent = titleParts[0] + (titleParts.length > 1 ? ':' : '');
+        }
+
+        if (captionTitleRest) {
+          captionTitleRest.textContent = titleParts.length > 1 ? titleParts.slice(1).join(': ') : '';
+        }
+
+        if (captionMeta) {
+          captionMeta.textContent = meta;
+        }
+
+      }
+
+      items.forEach((item) => {
+        item.addEventListener('mouseenter', () => setActiveItem(item));
+        item.addEventListener('mouseover', () => setActiveItem(item));
+        item.addEventListener('focus', () => setActiveItem(item));
+        item.addEventListener('click', () => setActiveItem(item));
+      });
+
+      function movePoster(direction) {
+        const nextIndex = (currentIndex + direction + items.length) % items.length;
+        setActiveItem(items[nextIndex]);
+      }
+
+      poster.addEventListener('click', (event) => {
+        const bounds = poster.getBoundingClientRect();
+        const direction = event.clientX < bounds.left + bounds.width / 2 ? -1 : 1;
+        movePoster(direction);
+      });
+
+      poster.addEventListener('mousedown', (event) => event.preventDefault());
+      poster.addEventListener('selectstart', (event) => event.preventDefault());
+      poster.addEventListener('dragstart', (event) => event.preventDefault());
+
+      if (items[0]) setActiveItem(items[0]);
+    </script>
   
-     <p><a href="index.html">back</a></p>
+     <p class="event-back"><a href="index.html">back</a></p>
   </body>
 </html>

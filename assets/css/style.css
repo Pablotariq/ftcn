@@ -197,21 +197,86 @@ body.releases-page {
 }
 
 
-.eventos-grid {
-  justify-content: start;
-  margin-top: 0;
-  margin-left: 10px;
+.events-layout {
+  display: grid;
+  grid-template-columns: minmax(380px, 42vw) minmax(0, 1fr);
+  gap: 2rem;
+  width: calc(100vw - 40px);
+  margin: 0 15px 6rem 20px;
+  align-items: center;
+  justify-content: center;
 }
 
-.eventos-grid img {
+.event-list {
+  position: relative;
+  z-index: 2;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.event-item {
+  display: block;
+  cursor: pointer;
+  font-family: "chandler-42-regular", sans-serif;
+  font-size: 0.82em;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  opacity: 0.55;
+  transition: opacity 0.2s ease;
+}
+
+.event-item summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.event-name,
+.event-meta {
+  display: block;
+}
+
+.event-meta {
+  font-size: 0.82em;
+}
+
+.event-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.event-item:hover,
+.event-item.active {
+  opacity: 1;
+}
+
+.event-poster-frame {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-poster-frame img {
+  display: block;
   width: auto;
   max-width: 100%;
   height: 90vh;
+  object-fit: contain;
   aspect-ratio: auto;
+  margin: 0 auto;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.event-caption {
+  display: none;
 }
 
 body.eventos-page {
-  background-color: rgb(191, 190, 190);
+  background-color: rgb(0, 0, 0);
   color: white;
 }
 
@@ -244,15 +309,20 @@ body.eventos-page .nav-logo {
 
 .about-layout {
   box-sizing: border-box;
-  display: block;
+  display: flex;
+  flex: 1;
+  align-items: center;
   width: 100%;
   max-width: 100%;
-  margin: 0 0 3rem;
+  margin: 0;
   line-height: 1.1em;
 }
 
 body:has(.about-layout) {
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   position: static;
   width: 100%;
   max-width: 100vw;
@@ -271,11 +341,11 @@ body:has(.about-layout) {
   margin-left: 100px;
   display: flex;
   align-items: center;
-  transform: translateY(22px);
 }
 
 .about-back {
-  margin: 28px 5px 0;
+  margin: auto 5px 0;
+  transform: translateY(22px);
 }
 
 .about-image {
@@ -306,7 +376,18 @@ body:has(.about-layout) {
 }
 
 .about-back {
-  margin: 0 5px;
+  margin: auto 5px 0;
+}
+
+body:has(.merch-gallery) {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.merch-back {
+  margin: auto 10px 0;
+  transform: translateY(22px);
 }
 
 body.editorial-page .nav-logo {
@@ -477,6 +558,8 @@ body:has(.mixes-content) {
   }
 
   .about-layout {
+    display: block;
+    flex: none;
     grid-template-columns: 1fr;
     gap: 1.5rem;
     width: calc(100% - 20px);
@@ -510,6 +593,97 @@ body:has(.mixes-content) {
     height: auto;
     padding: 0;
     margin: 20px 5px 0;
+  }
+
+  .events-layout {
+    position: relative;
+    grid-template-columns: 1fr;
+    width: calc(100vw - 20px);
+    margin: 0 10px 2rem;
+    gap: 0;
+    align-items: start;
+  }
+
+  .event-list {
+    display: none;
+  }
+
+  .event-poster-frame {
+    position: fixed;
+    top: 50%;
+    left: 10px;
+    width: calc(100vw - 20px);
+    height: 60vh;
+    transform: translateY(-50%);
+    justify-content: center;
+  }
+
+  .event-poster-frame img {
+    width: auto;
+    max-width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: contain;
+    margin: 0 auto;
+  }
+
+  .event-caption {
+    position: fixed;
+    top: calc(50% + 32.5vh);
+    left: 10px;
+    right: 10px;
+    z-index: 2;
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-family: "chandler-42-regular", sans-serif;
+    font-size: 0.82em;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .event-caption summary {
+    display: block;
+    margin: 0;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .event-caption summary > span {
+    display: block;
+  }
+
+  .event-caption summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .event-back {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    z-index: 2;
+    justify-self: start;
+    width: calc(100% - 20px);
+    margin: 0;
+    text-align: left;
+  }
+
+  .event-caption p {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding-top: 0.8rem;
+    font-size: 0.8em;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    text-align: center;
+    background: #000;
+    z-index: 1;
   }
 
   .mixes-content {
