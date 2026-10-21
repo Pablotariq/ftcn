@@ -150,6 +150,8 @@ h1 a:not(.logo-link):hover::after {
   margin: 1rem 15px;
   row-gap: 1rem;
   margin-right: 15px;
+  margin-bottom: 3rem;
+  padding-bottom: 20px;
 }
 
 .releases-grid img {
@@ -343,11 +345,6 @@ body:has(.about-layout) {
   align-items: center;
 }
 
-.about-back {
-  margin: auto 5px 0;
-  transform: translateY(22px);
-}
-
 .about-image {
   display: block;
   position: fixed;
@@ -375,19 +372,10 @@ body:has(.about-layout) {
   text-align: center ;
 }
 
-.about-back {
-  margin: auto 5px 0;
-}
-
 body:has(.merch-gallery) {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-
-.merch-back {
-  margin: auto 10px 0;
-  transform: translateY(22px);
 }
 
 body.editorial-page .nav-logo {
@@ -657,17 +645,6 @@ body:has(.mixes-content) {
 
   .event-caption summary::-webkit-details-marker {
     display: none;
-  }
-
-  .event-back {
-    position: fixed;
-    left: 10px;
-    bottom: 10px;
-    z-index: 2;
-    justify-self: start;
-    width: calc(100% - 20px);
-    margin: 0;
-    text-align: left;
   }
 
   .event-caption p {
