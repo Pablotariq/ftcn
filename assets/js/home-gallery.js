@@ -70,14 +70,6 @@ const overlaps = (first, second) =>
   first.top < second.bottom + gap &&
   first.bottom + gap > second.top;
 
-const getRandomImageIndex = () => {
-  let index = currentGalleryImage;
-  while (galleryImages.length > 1 && index === currentGalleryImage) {
-    index = Math.floor(Math.random() * galleryImages.length);
-  }
-  return index;
-};
-
 const positionGalleryImage = () => {
   const imageWidth = galleryImage.offsetWidth;
   const imageHeight = galleryImage.offsetHeight;
@@ -138,8 +130,13 @@ const updateGalleryPosition = (left, top) => {
   };
 };
 
-const showRandomGalleryImage = () => {
-  currentGalleryImage = getRandomImageIndex();
+const showNextGalleryImage = () => {
+  currentGalleryImage = (currentGalleryImage + 1) % galleryImages.length;
+  galleryImage.src = galleryImages[currentGalleryImage];
+};
+
+const showInitialGalleryImage = () => {
+  currentGalleryImage = Math.floor(Math.random() * galleryImages.length);
   galleryImage.src = galleryImages[currentGalleryImage];
 };
 
@@ -202,11 +199,11 @@ galleryImage.addEventListener("click", (event) => {
     return;
   }
   galleryAutoCycle = false;
-  showRandomGalleryImage();
+  showNextGalleryImage();
 });
 window.setInterval(() => {
   if (galleryAutoCycle && !dragState) {
-    showRandomGalleryImage();
+    showNextGalleryImage();
   }
 }, 5000);
 window.addEventListener("resize", () => {
@@ -216,4 +213,4 @@ window.addEventListener("resize", () => {
     positionGalleryImage();
   }
 });
-showRandomGalleryImage();
+showInitialGalleryImage();
