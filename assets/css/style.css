@@ -27,6 +27,12 @@ body {
   transform: translate(-50%, -50%);
 }
 
+@media (min-width: 701px) {
+  .stamped-logo {
+    width: min(95px, 13.6vw);
+  }
+}
+
 
 body.homepage {
   box-sizing: border-box;
@@ -146,7 +152,7 @@ h1 a:not(.logo-link):hover::after {
 
 .homepage-gallery-image {
   position: fixed;
-  z-index: 2;
+  z-index: 10000;
   display: block;
   width: auto;
   max-width: min(220px, 30vw);
@@ -168,6 +174,11 @@ h1 a:not(.logo-link):hover::after {
   bottom: 20px;
   z-index: 4;
   font-size: 0.85em;
+}
+
+body.homepage > h1 {
+  position: relative;
+  z-index: 4;
 }
 
 .homepage-newsletter .newsletter-letter {
@@ -504,8 +515,20 @@ body:has(.about-layout) {
   transform: translateY(-20px);
 }
 
-.about-text a:hover {
-  letter-spacing: 1px;
+.about-text a .about-jiggle-letter {
+  display: inline-block;
+}
+
+.about-text a:hover .about-jiggle-letter:nth-child(3n) {
+  transform: translateY(0.08em) rotate(-4deg);
+}
+
+.about-text a:hover .about-jiggle-letter:nth-child(3n + 1) {
+  transform: translateY(-0.05em) rotate(3deg);
+}
+
+.about-text a:hover .about-jiggle-letter:nth-child(3n + 2) {
+  transform: translateY(0.03em) rotate(-2deg);
 }
 
 .about-image {

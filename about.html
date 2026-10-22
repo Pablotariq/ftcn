@@ -50,6 +50,18 @@ F.T.C.N. Ediciones is a music and publishing label operating between Madrid and 
       Website developed by
       <a href="https://www.are.na/pablo-tariq/index?profileId=pablo-tariq&channelId=index" target="_blank" rel="noopener noreferrer">Pablo del Rey Méndez</a>
     </p> -->
+    <script>
+      document.querySelectorAll('.about-text a').forEach((link) => {
+        const label = link.textContent;
+        link.replaceChildren();
+        [...label].forEach((character) => {
+          const letter = document.createElement('span');
+          letter.className = 'about-jiggle-letter';
+          letter.textContent = character;
+          link.append(letter);
+        });
+      });
+    </script>
     <script src="assets/js/stars.js"></script>
   </body>
 </html>
