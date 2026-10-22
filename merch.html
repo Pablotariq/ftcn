@@ -40,22 +40,33 @@
           <img class="merch-face merch-front" src="assets/images/MERCH/FTCNBLACKFRONT.png" alt="FTCN black shirt, front" />
           <img class="merch-face merch-back" src="assets/images/MERCH/FTCNBLACKBACK.png" alt="FTCN black shirt, back" />
         </div>
-        <span class="merch-title">Telaraña tee</span>
+        <a class="merch-title" href="https://fetuccini.bandcamp.com/merch/telara-a-x-radioactive-lamb-t-shirt-double-cd" target="_blank" rel="noopener noreferrer">Telaraña tee</a>
       </div>
       <div class="merch-item">
-        <img class="merch-image" src="assets/images/MERCH/FTCNYELLOW.png" alt="FTCN yellow shirt" />
-        <span class="merch-title">FTCN tee (yellow)</span>
+        <a class="merch-image-link" href="https://fetuccini.bandcamp.com/merch/ftcn-ediciones-label-t-shirt" target="_blank" rel="noopener noreferrer">
+          <img class="merch-image" src="assets/images/MERCH/FTCNYELLOW.png" alt="FTCN yellow shirt" />
+        </a>
+        <a class="merch-title" href="https://fetuccini.bandcamp.com/merch/ftcn-ediciones-label-t-shirt" target="_blank" rel="noopener noreferrer">FTCN tee (yellow)</a>
       </div>
       <div class="merch-item">
-        <img class="merch-image" src="assets/images/MERCH/FTCNWHITE.png" alt="FTCN white shirt" />
-        <span class="merch-title">FTCN tee (white)</span>
+        <a class="merch-image-link" href="https://fetuccini.bandcamp.com/merch/ftcn-ediciones-label-t-shirt" target="_blank" rel="noopener noreferrer">
+          <img class="merch-image" src="assets/images/MERCH/FTCNWHITE.png" alt="FTCN white shirt" />
+        </a>
+        <a class="merch-title" href="https://fetuccini.bandcamp.com/merch/ftcn-ediciones-label-t-shirt" target="_blank" rel="noopener noreferrer">FTCN tee (white)</a>
       </div>
     </section>
   
     <script>
       const blackShirt = document.querySelector('.merch-double');
+      const telaranaUrl = 'https://fetuccini.bandcamp.com/merch/telara-a-x-radioactive-lamb-t-shirt-double-cd';
+
+      const isDesktop = () => window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
       blackShirt.addEventListener('click', () => {
+        if (isDesktop()) {
+          window.open(telaranaUrl, '_blank', 'noopener,noreferrer');
+          return;
+        }
         const isFlipped = blackShirt.classList.toggle('is-flipped');
         blackShirt.setAttribute('aria-pressed', String(isFlipped));
       });
@@ -63,6 +74,10 @@
       blackShirt.addEventListener('keydown', (event) => {
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
+          if (isDesktop()) {
+            window.open(telaranaUrl, '_blank', 'noopener,noreferrer');
+            return;
+          }
           const isFlipped = blackShirt.classList.toggle('is-flipped');
           blackShirt.setAttribute('aria-pressed', String(isFlipped));
         }

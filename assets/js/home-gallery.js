@@ -55,6 +55,9 @@ const gap = 20;
 let currentGalleryImage = -1;
 let hasPositionedGalleryImage = false;
 let galleryCenter = null;
+let dragState = null;
+let suppressNextClick = false;
+let galleryAutoCycle = true;
 
 galleryImage.className = "homepage-gallery-image";
 galleryImage.alt = "FTCN gallery";
@@ -121,6 +124,20 @@ const keepGalleryImageCentered = () => {
   galleryImage.style.top = `${galleryCenter.y - galleryImage.offsetHeight / 2}px`;
 };
 
+const updateGalleryPosition = (left, top) => {
+  const maxLeft = Math.max(0, window.innerWidth - galleryImage.offsetWidth);
+  const maxTop = Math.max(0, window.innerHeight - galleryImage.offsetHeight);
+  const nextLeft = Math.min(Math.max(0, left), maxLeft);
+  const nextTop = Math.min(Math.max(0, top), maxTop);
+
+  galleryImage.style.left = `${nextLeft}px`;
+  galleryImage.style.top = `${nextTop}px`;
+  galleryCenter = {
+    x: nextLeft + galleryImage.offsetWidth / 2,
+    y: nextTop + galleryImage.offsetHeight / 2,
+  };
+};
+
 const showRandomGalleryImage = () => {
   currentGalleryImage = getRandomImageIndex();
   galleryImage.src = galleryImages[currentGalleryImage];
@@ -134,11 +151,64 @@ galleryImage.addEventListener("load", () => {
     keepGalleryImageCentered();
   }
 });
+galleryImage.addEventListener("pointerdown", (event) => {
+  if (!event.isPrimary) return;
+
+  const rect = galleryImage.getBoundingClientRect();
+  dragState = {
+    startX: event.clientX,
+    startY: event.clientY,
+    startLeft: rect.left,
+    startTop: rect.top,
+    hasMoved: false,
+  };
+  galleryImage.classList.add("is-dragging");
+  galleryImage.setPointerCapture(event.pointerId);
+  event.stopPropagation();
+});
+galleryImage.addEventListener("pointermove", (event) => {
+  if (!dragState || !event.isPrimary) return;
+
+  const distanceX = event.clientX - dragState.startX;
+  const distanceY = event.clientY - dragState.startY;
+  if (Math.hypot(distanceX, distanceY) > 3) {
+    dragState.hasMoved = true;
+  }
+  if (dragState.hasMoved) {
+    updateGalleryPosition(
+      dragState.startLeft + distanceX,
+      dragState.startTop + distanceY,
+    );
+    event.preventDefault();
+  }
+});
+const finishGalleryDrag = (event) => {
+  if (!dragState || !event.isPrimary) return;
+
+  suppressNextClick = dragState.hasMoved;
+  dragState = null;
+  galleryImage.classList.remove("is-dragging");
+  if (galleryImage.hasPointerCapture(event.pointerId)) {
+    galleryImage.releasePointerCapture(event.pointerId);
+  }
+};
+galleryImage.addEventListener("pointerup", finishGalleryDrag);
+galleryImage.addEventListener("pointercancel", finishGalleryDrag);
 galleryImage.addEventListener("click", (event) => {
   event.preventDefault();
   event.stopPropagation();
+  if (suppressNextClick) {
+    suppressNextClick = false;
+    return;
+  }
+  galleryAutoCycle = false;
   showRandomGalleryImage();
 });
+window.setInterval(() => {
+  if (galleryAutoCycle && !dragState) {
+    showRandomGalleryImage();
+  }
+}, 5000);
 window.addEventListener("resize", () => {
   if (hasPositionedGalleryImage) {
     keepGalleryImageCentered();

@@ -153,14 +153,48 @@ h1 a:not(.logo-link):hover::after {
   max-height: min(220px, 30vw);
   height: auto;
   cursor: pointer;
+  touch-action: none;
   user-select: none;
   -webkit-user-drag: none;
+}
+
+.homepage-gallery-image.is-dragging {
+  cursor: pointer;
+}
+
+.homepage-newsletter {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 4;
+  font-size: 0.85em;
+}
+
+.homepage-newsletter .newsletter-letter {
+  display: inline-block;
+}
+
+.homepage-newsletter:hover .newsletter-letter:nth-child(3n) {
+  transform: translateY(0.08em) rotate(-4deg);
+}
+
+.homepage-newsletter:hover .newsletter-letter:nth-child(3n + 1) {
+  transform: translateY(-0.05em) rotate(3deg);
+}
+
+.homepage-newsletter:hover .newsletter-letter:nth-child(3n + 2) {
+  transform: translateY(0.03em) rotate(-2deg);
 }
 
 @media (max-width: 700px) {
   .homepage-gallery-image {
     max-width: min(180px, 33.6vw);
     max-height: min(180px, 33.6vw);
+  }
+
+  .homepage-newsletter {
+    right: 10px;
+    bottom: 10px;
   }
 }
 
@@ -329,6 +363,11 @@ body.eventos-page .nav-logo {
   aspect-ratio: 1;
   object-fit: contain;
   object-position: left bottom;
+}
+
+.merch-image-link {
+  display: block;
+  cursor: pointer;
 }
 
 .merch-double {
