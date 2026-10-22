@@ -36,6 +36,8 @@ body.homepage {
   display: flex;
   flex-direction: column;
   align-items: left;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 a,
@@ -140,6 +142,26 @@ h1 a:not(.logo-link):hover::after {
   visibility: visible;
   opacity: 1;
   object-fit: contain;
+}
+
+.homepage-gallery-image {
+  position: fixed;
+  z-index: 2;
+  display: block;
+  width: auto;
+  max-width: min(220px, 30vw);
+  max-height: min(220px, 30vw);
+  height: auto;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+@media (max-width: 700px) {
+  .homepage-gallery-image {
+    max-width: min(180px, 33.6vw);
+    max-height: min(180px, 33.6vw);
+  }
 }
 
 .releases-grid {
