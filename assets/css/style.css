@@ -1,3 +1,6 @@
+/*general styles*/
+
+
 body {
   font-family: "chandler-42-regular", sans-serif;
   font-size: 22px;
@@ -7,15 +10,6 @@ body {
   margin: 20px;
   position: absolute;
   flexwrap: wrap;
-}
-
-.floating-fettucini {
-  position: fixed;
-  z-index: 9999;
-  display: block;
-  width: min(220px, 30vw);
-  height: auto;
-  cursor: pointer;
 }
 
 .stamped-logo {
@@ -32,6 +26,8 @@ body {
     width: min(95px, 13.6vw);
   }
 }
+
+/*homepage*/
 
 
 body.homepage {
@@ -53,10 +49,6 @@ a:visited {
 }
 
 .mobile-navigation {
-  display: none;
-}
-
-.mobile-navigation-toggle {
   display: none;
 }
 
@@ -99,41 +91,6 @@ h1 a:not(.logo-link):hover .header-scrambled-letter:nth-child(3n + 2) {
 
 h1 a:not(.logo-link):hover {
   text-decoration: none;
-}
-
-/* Add a wavy underline effect on hover for non-logo links
-h1 a:not(.logo-link):hover::after {
-  position: absolute;
-  right: 0;
-  bottom: -0.08em;
-  left: 0;
-  height: 2pt;
-  background: currentColor;
-  content: "";
- clip-path: polygon(
-  0 20%,
-  12% 10%,
-  25% 35%,
-  40% 20%,
-  55% 35%,
-  70% 45%,
-  85% 10%,
-  100% 35%,
-  100% 100%,
-  0 100%
-);
- 
-*/
- 
-.homepage-logo {
-  display: none;
-  position: absolute;
-  z-index: 1;
-  top: 50%;
-  right: 10px;
-  width: 250px;
-  height: auto;
-  transform: translateY(-50%);
 }
 
 .homepage-photo {
@@ -209,6 +166,8 @@ body.homepage > h1 {
   }
 }
 
+/*releases*/
+
 .releases-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
@@ -265,6 +224,8 @@ body.releases-page {
   color: white;
 }
 
+
+/*events*/
 
 .events-layout {
   display: grid;
@@ -356,6 +317,8 @@ body.eventos-page {
 body.eventos-page .nav-logo {
   filter: brightness(0) invert(1);
 }
+
+/*merch*/
 
 .merch-gallery {
   display: grid;
@@ -478,6 +441,8 @@ body.eventos-page .nav-logo {
   }
 }
 
+/*about*/
+
 .about-layout {
   box-sizing: border-box;
   display: flex;
@@ -499,11 +464,6 @@ body:has(.about-layout) {
   max-width: 100vw;
   margin: 0;
   overflow-x: clip;
-}
-
-.about-text h1 {
-  width: auto;
-  margin-left: 0rem;
 }
 
 .about-text {
@@ -546,16 +506,12 @@ body:has(.about-layout) {
   pointer-events: none;
 }
 
+/*phone*/
+
 @media (min-width: 701px) and (max-width: 1200px) {
   .about-text {
     margin-left: clamp(10px, calc(100vw - 1050px), 100px);
   }
-}
-
-.site-credit {
-  margin: 10px;
-  font-size: 0.75em;
-  text-align: center ;
 }
 
 body:has(.merch-gallery) {
@@ -693,7 +649,6 @@ body:has(.mixes-content) {
 }
 
 
-/* to change the tab of the dates */
 .mixes-column a {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(12ch, 1fr) max-content;
@@ -949,28 +904,6 @@ h1 {
     display: none;
   }
 
-  /* .mobile-navigation-toggle {
-    display: block;
-    margin: 3px auto 0;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    color: inherit;
-    cursor: pointer;
-  }
-
-  .mobile-navigation-toggle img {
-    display: block;
-    width: 8em;
-    object-fit: contain;
-  }
-
-  body.releases-page .mobile-navigation-toggle img,
-  body.eventos-page .mobile-navigation-toggle img,
-  body.editorial-page .mobile-navigation-toggle img {
-    filter: brightness(0) invert(1);
-  } */
-
   .mobile-navigation {
     display: flex;
     flex-direction: column;
@@ -1027,7 +960,7 @@ h1 {
   }
 }
 
-body.is-two-thirds-width h1 {
+body.is-three-quarters-width h1 {
   white-space: normal;
 }
 

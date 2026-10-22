@@ -1,5 +1,5 @@
 const updateStars = () => {
-  const isTwoThirdsWidth = window.innerWidth <= window.screen.availWidth * (2 / 3);
+  const isThreeQuartersWidth = window.innerWidth <= window.screen.availWidth * (3 / 4);
   const heading = document.querySelector("h1");
   const groups = [...document.querySelectorAll(".nav-stars")];
 
@@ -7,7 +7,7 @@ const updateStars = () => {
     return;
   }
 
-  document.body.classList.remove("is-two-thirds-width");
+  document.body.classList.remove("is-three-quarters-width");
 
   const stars = groups.map((group) => [...group.querySelectorAll("span")]);
 
@@ -18,13 +18,13 @@ const updateStars = () => {
   const viewportRatio = window.innerWidth / window.screen.availWidth;
   let visibleStars = 1;
 
-  if (viewportRatio > 0.95) {
+  if (viewportRatio > 0.99) {
     visibleStars = 5;
-  } else if (viewportRatio > 0.90) {
+  } else if (viewportRatio > 0.94) {
     visibleStars = 4;
-  } else if (viewportRatio > 0.85) {
+  } else if (viewportRatio > 0.89) {
     visibleStars = 3;
-  } else if (viewportRatio > 0.65) {
+  } else if (viewportRatio > 0.84) {
     visibleStars = 2;
   }
 
@@ -34,7 +34,7 @@ const updateStars = () => {
       .forEach((star) => star.classList.add("is-hidden"));
   });
 
-  document.body.classList.toggle("is-two-thirds-width", isTwoThirdsWidth);
+  document.body.classList.toggle("is-three-quarters-width", isThreeQuartersWidth);
 };
 
 const updateReleaseTitles = () => {
