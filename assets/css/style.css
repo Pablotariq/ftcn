@@ -443,6 +443,10 @@ body:has(.about-layout) {
   transform: translateY(-20px);
 }
 
+.about-text a:hover {
+  letter-spacing: 1px;
+}
+
 .about-image {
   display: block;
   position: fixed;
