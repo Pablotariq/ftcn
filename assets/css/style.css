@@ -227,8 +227,7 @@ body.releases-page {
   font-size: 0.82em;
   line-height: 1.2;
   letter-spacing: 0.04em;
-  opacity: 0.55;
-  transition: opacity 0.2s ease;
+  opacity: 1;
 }
 
 .event-item summary {
@@ -252,6 +251,11 @@ body.releases-page {
 .event-item:hover,
 .event-item.active {
   opacity: 1;
+}
+
+.event-item:hover .event-name,
+.event-item.active .event-name {
+  letter-spacing: 2px;
 }
 
 .event-poster-frame {
@@ -288,7 +292,7 @@ body.eventos-page .nav-logo {
 
 .merch-gallery {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
   width: calc(100vw - 40px);
   margin: 10px 10px;
@@ -298,14 +302,107 @@ body.eventos-page .nav-logo {
   display: block;
   width: 100%;
   max-width: 100%;
-  height: 80vh;
+  margin-top: 100px;
+  height: auto;
+  aspect-ratio: 1;
   object-fit: contain;
-  object-position: left center;
+  object-position: left bottom;
+}
+
+.merch-double {
+  position: relative;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  aspect-ratio: 1;
+}
+
+.merch-item {
+  min-width: 0;
+}
+
+.merch-title {
+  display: block;
+  margin-top: 0rem;
+  text-align: center;
+}
+
+.merch-double .merch-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.merch-double .merch-front {
+  position: absolute;
+  opacity: 1;
+}
+
+.merch-double .merch-back {
+  opacity: 0;
+}
+
+.merch-double.is-flipped .merch-front {
+  opacity: 0;
+}
+
+.merch-double.is-flipped .merch-back {
+  opacity: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .merch-double:hover .merch-front {
+    opacity: 0;
+  }
+
+  .merch-double:hover .merch-back {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 700px) {
   .merch-gallery {
     grid-template-columns: 1fr;
+    box-sizing: border-box;
+    width: calc(100vw - 20px);
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    justify-items: center;
+  }
+
+  .merch-gallery .merch-item {
+    width: 100%;
+    text-align: center;
+  }
+
+  .merch-gallery .merch-image {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    object-position: center bottom;
+  }
+
+  .merch-gallery .merch-double .merch-face {
+    object-position: center center;
+  }
+
+  body:has(.merch-gallery) {
+    position: static;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 30px;
+  }
+
+  .merch-item:last-child .merch-title {
+    padding-bottom: 50px;
   }
 }
 
@@ -343,6 +440,7 @@ body:has(.about-layout) {
   margin-left: 100px;
   display: flex;
   align-items: center;
+  transform: translateY(-20px);
 }
 
 .about-image {
@@ -376,6 +474,21 @@ body:has(.merch-gallery) {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: #b5b5b7;
+  color: white;
+}
+
+body:has(.merch-gallery) h1,
+body:has(.merch-gallery) .mobile-navigation {
+  color: white;
+}
+
+body:has(.merch-gallery) .mobile-navigation-logo {
+  filter: brightness(0) invert(1);
+}
+
+body:has(.merch-gallery) .nav-logo {
+  filter: brightness(0) invert(1);
 }
 
 body.editorial-page .nav-logo {
@@ -513,6 +626,10 @@ body:has(.mixes-content) {
   text-align: left;
   white-space: nowrap;
   line-height: 1.25em;
+}
+
+.mixes-column a:hover > span:first-child {
+  letter-spacing: 1.5px;
 }
 
 .mixes-column a b {

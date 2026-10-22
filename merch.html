@@ -35,10 +35,39 @@
     </nav>
 
     <section class="merch-gallery" aria-label="Merchandise">
-      <img class="merch-image" src="assets/images/MERCH/FTCN_CAMI.jpg" alt="FTCN Camiseta" />
-  
+      <div class="merch-item">
+        <div class="merch-image merch-double" role="button" tabindex="0" aria-pressed="false" aria-label="Show the back of the FTCN black shirt">
+          <img class="merch-face merch-front" src="assets/images/MERCH/FTCNBLACKFRONT.png" alt="FTCN black shirt, front" />
+          <img class="merch-face merch-back" src="assets/images/MERCH/FTCNBLACKBACK.png" alt="FTCN black shirt, back" />
+        </div>
+        <span class="merch-title">Telaraña tee</span>
+      </div>
+      <div class="merch-item">
+        <img class="merch-image" src="assets/images/MERCH/FTCNYELLOW.png" alt="FTCN yellow shirt" />
+        <span class="merch-title">FTCN tee (yellow)</span>
+      </div>
+      <div class="merch-item">
+        <img class="merch-image" src="assets/images/MERCH/FTCNWHITE.png" alt="FTCN white shirt" />
+        <span class="merch-title">FTCN tee (white)</span>
+      </div>
     </section>
   
+    <script>
+      const blackShirt = document.querySelector('.merch-double');
+
+      blackShirt.addEventListener('click', () => {
+        const isFlipped = blackShirt.classList.toggle('is-flipped');
+        blackShirt.setAttribute('aria-pressed', String(isFlipped));
+      });
+
+      blackShirt.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          const isFlipped = blackShirt.classList.toggle('is-flipped');
+          blackShirt.setAttribute('aria-pressed', String(isFlipped));
+        }
+      });
+    </script>
     <script src="assets/js/stars.js"></script>
   </body>
 </html>
