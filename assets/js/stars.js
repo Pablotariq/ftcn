@@ -1,49 +1,10 @@
-const updateStars = () => {
-  const isThreeQuartersWidth = window.innerWidth <= window.screen.availWidth * (3 / 4);
-  const heading = document.querySelector("h1");
-  const groups = [...document.querySelectorAll(".nav-stars")];
-
-  if (!heading || groups.length === 0) {
-    return;
-  }
-
-  document.body.classList.remove("is-three-quarters-width");
-
-  const stars = groups.map((group) => [...group.querySelectorAll("span")]);
-
-  stars.flat().forEach((star) => {
-    star.classList.remove("is-hidden");
-  });
-
-  const viewportRatio = window.innerWidth / window.screen.availWidth;
-  let visibleStars = 1;
-
-  if (viewportRatio > 0.99) {
-    visibleStars = 5;
-  } else if (viewportRatio > 0.94) {
-    visibleStars = 4;
-  } else if (viewportRatio > 0.89) {
-    visibleStars = 3;
-  } else if (viewportRatio > 0.84) {
-    visibleStars = 2;
-  }
-
-  stars.forEach((group) => {
-    group
-      .slice(visibleStars)
-      .forEach((star) => star.classList.add("is-hidden"));
-  });
-
-  document.body.classList.toggle("is-three-quarters-width", isThreeQuartersWidth);
-};
-
 const updateReleaseTitles = () => {
   document.querySelectorAll(".release-title, .mixes-column a > span:first-child").forEach((title) => {
     const fullText = title.dataset.fullText || title.textContent;
     title.dataset.fullText = fullText;
 
     const isMixTitle = title.matches(".mixes-column a > span:first-child");
-    if (isMixTitle && window.matchMedia("(max-width: 700px)").matches) {
+    if (isMixTitle && window.matchMedia("(max-width: 900px)").matches) {
       title.textContent = fullText;
       return;
     }
@@ -193,9 +154,7 @@ const setupMobileNavigation = () => {
 
 setupMobileNavigation();
 */
-updateStars();
 updateReleaseTitles();
 window.addEventListener("resize", () => {
-  updateStars();
   updateReleaseTitles();
 });
