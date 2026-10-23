@@ -1,4 +1,8 @@
 document.addEventListener("click", (event) => {
+  if (event.target.closest("a, button, input, textarea, select, summary, [role='button']")) {
+    return;
+  }
+
   const logo = document.createElement("img");
 
   logo.className = "stamped-logo";

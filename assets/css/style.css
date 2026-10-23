@@ -163,6 +163,38 @@ body.eventos-page > .homepage-newsletter .mailing-list-short {
   display: none;
 }
 
+.homepage-newsletter.is-collapsed .mailing-list-short {
+  display: inline;
+}
+
+.homepage-newsletter.is-collapsed .mailing-list-full {
+  display: none;
+}
+
+.homepage-newsletter.is-collapsed .newsletter-letter:not(:first-child) {
+  display: none;
+}
+
+.homepage-newsletter:focus {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .homepage-newsletter {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+body.eventos-page .homepage-newsletter:not(.is-collapsed) .mailing-list-short,
+body.releases-page .homepage-newsletter:not(.is-collapsed) .mailing-list-short {
+  display: none;
+}
+
+body.eventos-page .homepage-newsletter:not(.is-collapsed) .mailing-list-full,
+body.releases-page .homepage-newsletter:not(.is-collapsed) .mailing-list-full {
+  display: inline;
+}
+
 body.homepage > h1 {
   position: relative;
   z-index: 4;
@@ -224,7 +256,7 @@ body.homepage > h1 {
   margin: 1rem 15px;
   row-gap: 1rem;
   margin-right: 15px;
-  margin-bottom: 3rem;
+  margin-bottom: 25px;
   padding-bottom: 20px;
 }
 
@@ -1093,6 +1125,30 @@ h1 a {
 
   .nav-stars {
     margin-inline: -0.12em;
+  }
+
+  .homepage-newsletter.is-collapsed .mailing-list-short {
+    display: none !important;
+  }
+
+  .homepage-newsletter.is-collapsed .mailing-list-short {
+    display: inline !important;
+  }
+
+  .homepage-newsletter.is-collapsed .mailing-list-full {
+    display: none !important;
+  }
+
+  .homepage-newsletter:not(.is-collapsed) .newsletter-letter {
+    transform: none !important;
+  }
+
+  .homepage-newsletter:not(.is-collapsed) .mailing-list-short {
+    display: none !important;
+  }
+
+  .homepage-newsletter:not(.is-collapsed) .mailing-list-full {
+    display: inline !important;
   }
 }
 

@@ -118,6 +118,41 @@ document.querySelectorAll("h1 a:not(.logo-link)").forEach((link) => {
   link.replaceChildren(...letters);
 });
 
+document.querySelectorAll(".homepage-newsletter").forEach((newsletter) => {
+  const isHomepage = document.body.classList.contains("homepage");
+  const startsCollapsed =
+    !isHomepage &&
+    (window.matchMedia("(max-width: 900px)").matches ||
+      document.body.classList.contains("eventos-page") ||
+      document.body.classList.contains("releases-page"));
+
+  if (!isHomepage && startsCollapsed) {
+    newsletter.classList.add("is-collapsed");
+  }
+
+  newsletter.addEventListener("click", (event) => {
+    if (
+      !newsletter.querySelector(".mailing-list-short") &&
+      !newsletter.querySelector(".newsletter-letter")
+    ) {
+      return;
+    }
+
+    const clickedStar =
+      event.target.closest(".mailing-list-short, .newsletter-letter")?.textContent.trim() === "*";
+    if (clickedStar) {
+      event.preventDefault();
+      newsletter.classList.toggle("is-collapsed");
+      newsletter.focus();
+      return;
+    }
+
+    if (window.matchMedia("(max-width: 900px)").matches && !newsletter.classList.contains("is-collapsed")) {
+      return;
+    }
+  });
+});
+
 /*
 const setupMobileNavigation = () => {
   const navigation = document.querySelector(".mobile-navigation");
