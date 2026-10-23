@@ -431,7 +431,7 @@ body.eventos-page .nav-logo {
   max-width: 100%;
   margin-top: 100px;
   height: auto;
-  aspect-ratio: 1;
+  aspect-ratio: 1 / 1.1;
   object-fit: contain;
   object-position: left bottom;
 }
@@ -447,11 +447,17 @@ body.eventos-page .nav-logo {
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
-  aspect-ratio: 1;
+  aspect-ratio: 1 / 1.1;
 }
 
 .merch-item {
   min-width: 0;
+}
+
+.merch-item:first-child .merch-image {
+  object-fit: contain;
+  object-position: center;
+  transform: scale(1.08);
 }
 
 .merch-title {
@@ -460,14 +466,24 @@ body.eventos-page .nav-logo {
   text-align: center;
 }
 
+.merch-sold-out {
+  display: none;
+}
+
 .merch-double .merch-face {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  inset: 4%;
+  width: 92%;
+  height: 92%;
   max-width: 100%;
   object-fit: contain;
   object-position: center center;
+}
+
+@media (min-width: 901px) {
+  .merch-item {
+    transform: translateY(-60px);
+  }
 }
 
 .merch-double .merch-front {
@@ -525,6 +541,13 @@ body.eventos-page .nav-logo {
     object-position: center center;
   }
 
+  .merch-sold-out {
+    display: block;
+    margin-top: 0.15rem;
+    text-align: center;
+    font-size: 1em;
+  }
+
   body:has(.merch-gallery) {
     position: static;
     margin: 0;
@@ -533,7 +556,7 @@ body.eventos-page .nav-logo {
     padding-bottom: 30px;
   }
 
-  .merch-item:last-child .merch-title {
+  .merch-item:last-child {
     padding-bottom: 50px;
   }
 }
