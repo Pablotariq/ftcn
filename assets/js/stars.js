@@ -85,7 +85,45 @@ const updateReleaseTitles = () => {
   });
 };
 
+const orderDesktopNavigation = () => {
+  const heading = document.querySelector("body > h1");
+  if (!heading) return;
+
+  const linksByPage = new Map(
+    [...heading.querySelectorAll("a")].map((link) => {
+      const page = link.href.startsWith("mailto:")
+        ? "contact.html"
+        : new URL(link.href).pathname.split("/").pop();
+      return [page, link];
+    }),
+  );
+  const stars = [...heading.querySelectorAll(".nav-stars")];
+  const order = [
+    "about.html",
+    "releases.html",
+    "eventos.html",
+    "mixes.html",
+    "editorial.html",
+    "merch.html",
+    "contact.html",
+  ];
+
+  if (order.some((page) => !linksByPage.has(page)) || stars.length < order.length - 1) {
+    return;
+  }
+
+  heading.replaceChildren();
+  order.forEach((page, index) => {
+    heading.append(linksByPage.get(page));
+    if (index < stars.length) {
+      heading.append(" / ", stars[index], " / ");
+    }
+  });
+};
+
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+orderDesktopNavigation();
 
 document.querySelectorAll(".mobile-navigation-logo").forEach((logo) => {
   logo.parentElement.href = "index.html";

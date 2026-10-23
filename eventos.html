@@ -27,21 +27,21 @@
     </h1>
     <nav class="mobile-navigation" aria-label="Main navigation">
       <div class="mobile-navigation-row">
-        <a href="about.html">about</a><span aria-hidden="true">/*/</span><a href="releases.html">releases</a><span aria-hidden="true">/*/</span><a href="editorial.html">editorial</a>
+        <a href="about.html">about</a><span aria-hidden="true">/*/</span><a href="releases.html">releases</a><span aria-hidden="true">/*/</span><a href="eventos.html"><img class="mobile-navigation-logo" src="assets/images/ftcnlogo.png" alt="events" /></a>
       </div>
       <div class="mobile-navigation-row">
-        <a href="eventos.html"><img class="mobile-navigation-logo" src="assets/images/ftcnlogo.png" alt="events" /></a><span aria-hidden="true">/*/</span><a href="mixes.html">mixes</a><span aria-hidden="true">/*/</span><a href="merch.html">merch</a><span aria-hidden="true">/*/</span><a href="mailto:info@ftcnediciones.es">contact</a>
+        <a href="mixes.html">mixes</a><span aria-hidden="true">/*/</span><a href="editorial.html">editorial</a><span aria-hidden="true">/*/</span><a href="merch.html">merch</a><span aria-hidden="true">/*/</span><a href="mailto:info@ftcnediciones.es">contact</a>
       </div>
     </nav>
 
    
     <section class="events-layout" aria-label="Event artwork">
       <ul class="event-list" aria-label="Event titles">
-        <details class="event-item active" data-image="assets/images/EVENTOS/event1.jpg" data-title="South Of North x F.T.C.N: Espacio Libre 1 @ ISO, Amsterdam OCT 2026" data-mobile-title="South Of North x F.T.C.N: Espacio Libre 1 @ ISO" data-mobile-meta="Amsterdam OCT 2026">
-          <summary><span class="event-name">South Of North x F.T.C.N: Espacio Libre 2</span><span class="event-meta">@ ISO, Amsterdam OCT 2026</span></summary>
-        </details>
-        <details class="event-item" data-image="assets/images/EVENTOS/event2.jpg" data-title="Tour Sofoquina x F.T.C.N, Spain OCT 2026" data-mobile-meta="Spain OCT 2026">
+        <details class="event-item active" data-image="assets/images/EVENTOS/event2.jpg" data-title="Tour Sofoquina x F.T.C.N, Spain OCT 2026" data-mobile-meta="Spain OCT 2026">
           <summary><span class="event-name">Tour Sofoquina x F.T.C.N</span><span class="event-meta">@ Spain OCT 2026</span></summary>
+        </details>
+        <details class="event-item" data-image="assets/images/EVENTOS/event1.jpg" data-title="South Of North x F.T.C.N: Espacio Libre 1 @ ISO, Amsterdam OCT 2026" data-mobile-title="South Of North x F.T.C.N: Espacio Libre 1 @ ISO" data-mobile-meta="Amsterdam OCT 2026">
+          <summary><span class="event-name">South Of North x F.T.C.N: Espacio Libre 2</span><span class="event-meta">@ ISO, Amsterdam OCT 2026</span></summary>
         </details>
         <details class="event-item" data-image="assets/images/EVENTOS/event3.jpg" data-title="Fetuxini @ Fase Rem, Mallorca AUG 2026" data-mobile-title="Fetuxini @ Fase Rem" data-mobile-meta="Mallorca AUG 2026">
           <summary><span class="event-name">Fetuxini</span><span class="event-meta">@ Fase Rem, Mallorca AUG 2026</span></summary>
@@ -70,7 +70,7 @@
       </ul>
 
       <div class="event-poster-frame">
-        <img id="event-poster" src="assets/images/EVENTOS/event1.jpg" alt="South Of North x F.T.C.N: Espacio Libre 1 @ ISO, Amsterdam OCT 2026" />
+        <img id="event-poster" src="assets/images/EVENTOS/event2.jpg" alt="Tour Sofoquina x F.T.C.N, Spain OCT 2026" />
       </div>
       <details id="event-caption" class="event-caption" aria-live="polite">
         <summary id="event-caption-summary">
@@ -80,14 +80,23 @@
         </summary>
       </details>
     </section>
+    <a
+      class="homepage-newsletter"
+      href="https://docs.google.com/forms/d/e/1FAIpQLSdwj20YNJAbaCPI4Wt1yi83_4ACwg6_cLHCFti5A1SDJv5gzQ/viewform?usp=dialog"
+      target="_blank"
+      rel="noopener noreferrer"
+    ><span class="mailing-list-short">*</span><span class="mailing-list-full"><span class="newsletter-letter">*</span><span class="newsletter-letter">&nbsp;</span><span class="newsletter-letter">j</span><span class="newsletter-letter">o</span><span class="newsletter-letter">i</span><span class="newsletter-letter">n</span><span class="newsletter-letter">&nbsp;</span><span class="newsletter-letter">o</span><span class="newsletter-letter">u</span><span class="newsletter-letter">r</span><span class="newsletter-letter">&nbsp;</span><span class="newsletter-letter">m</span><span class="newsletter-letter">a</span><span class="newsletter-letter">i</span><span class="newsletter-letter">l</span><span class="newsletter-letter">i</span><span class="newsletter-letter">n</span><span class="newsletter-letter">g</span><span class="newsletter-letter">&nbsp;</span><span class="newsletter-letter">l</span><span class="newsletter-letter">i</span><span class="newsletter-letter">s</span><span class="newsletter-letter">t</span></span></a>
     <script src="assets/js/stars.js"></script>
     <script>
       const poster = document.getElementById('event-poster');
       const captionTitle = document.getElementById('event-caption-title');
       const captionTitleRest = document.getElementById('event-caption-title-rest');
       const captionMeta = document.getElementById('event-caption-meta');
+      const eventList = document.querySelector('.event-list');
       const items = [...document.querySelectorAll('.event-item')];
+      const posterScrollThreshold = 200;
       let currentIndex = 0;
+      let accumulatedScroll = 0;
 
       function setActiveItem(item) {
         items.forEach((entry) => entry.classList.toggle('active', entry === item));
@@ -135,6 +144,15 @@
       poster.addEventListener('mousedown', (event) => event.preventDefault());
       poster.addEventListener('selectstart', (event) => event.preventDefault());
       poster.addEventListener('dragstart', (event) => event.preventDefault());
+
+      eventList.addEventListener('wheel', (event) => {
+        accumulatedScroll += event.deltaY;
+
+        if (Math.abs(accumulatedScroll) < posterScrollThreshold) return;
+
+        movePoster(accumulatedScroll > 0 ? 1 : -1);
+        accumulatedScroll = 0;
+      }, { passive: false });
 
       if (items[0]) setActiveItem(items[0]);
     </script>

@@ -52,12 +52,21 @@ const galleryImages = [
 
 const galleryImage = document.createElement("img");
 const gap = 20;
-let currentGalleryImage = -1;
+const galleryOrder = galleryImages.map((_, index) => index);
+let currentGalleryImage = Math.floor(Math.random() * galleryOrder.length);
 let hasPositionedGalleryImage = false;
 let galleryCenter = null;
 let dragState = null;
 let suppressNextClick = false;
 let galleryAutoCycle = true;
+
+for (let index = galleryOrder.length - 1; index > 0; index -= 1) {
+  const randomIndex = Math.floor(Math.random() * (index + 1));
+  [galleryOrder[index], galleryOrder[randomIndex]] = [
+    galleryOrder[randomIndex],
+    galleryOrder[index],
+  ];
+}
 
 galleryImage.className = "homepage-gallery-image";
 galleryImage.alt = "FTCN gallery";
@@ -131,13 +140,12 @@ const updateGalleryPosition = (left, top) => {
 };
 
 const showNextGalleryImage = () => {
-  currentGalleryImage = (currentGalleryImage + 1) % galleryImages.length;
-  galleryImage.src = galleryImages[currentGalleryImage];
+  currentGalleryImage = (currentGalleryImage + 1) % galleryOrder.length;
+  galleryImage.src = galleryImages[galleryOrder[currentGalleryImage]];
 };
 
 const showInitialGalleryImage = () => {
-  currentGalleryImage = Math.floor(Math.random() * galleryImages.length);
-  galleryImage.src = galleryImages[currentGalleryImage];
+  galleryImage.src = galleryImages[galleryOrder[currentGalleryImage]];
 };
 
 galleryImage.addEventListener("load", () => {
