@@ -648,6 +648,8 @@ body:has(.merch-gallery) {
 
 body:has(.merch-gallery) h1,
 body:has(.merch-gallery) .mobile-navigation {
+  position: relative;
+  z-index: 10;
   color: white;
 }
 
