@@ -257,7 +257,7 @@ body.homepage > h1 {
   row-gap: 1rem;
   margin-right: 15px;
   margin-bottom: 25px;
-  padding-bottom: 20px;
+  padding-bottom: 60px;
 }
 
 .releases-grid img {
@@ -962,6 +962,7 @@ body:has(.mixes-content) {
 
   .releases-grid {
     margin-top: 1.5rem;
+    padding-bottom: 40px;
   }
 
   .mixes-columns {
