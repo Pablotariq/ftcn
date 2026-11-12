@@ -740,8 +740,9 @@ body.editorial-page {
   display: flex;
   flex-direction: column;
   width: calc(100vw - 20px);
+  max-width: calc(100vw - 20px);
   min-height: calc(100vh - 40px);
-  margin: 0 13px;
+  margin: 0 10px;
 }
 
 body:has(.mixes-content) {
@@ -956,7 +957,8 @@ body:has(.mixes-content) {
   }
 
   .mixes-content {
-    width: calc(100% - 20px);
+    width: calc(100vw - 20px);
+    max-width: calc(100vw - 20px);
     margin: 1.5rem 10px 0;
   }
 
