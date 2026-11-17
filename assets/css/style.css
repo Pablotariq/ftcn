@@ -587,7 +587,7 @@ body:has(.about-layout) {
 }
 
 .about-text {
-  width: 600px;
+  width: 615px;
   max-width: none;
   margin-left: 100px;
   display: flex;
@@ -595,8 +595,18 @@ body:has(.about-layout) {
   transform: translateY(-20px);
 }
 
+.about-text a,
+.about-text a:visited {
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+  text-decoration-thickness: 0.06em;
+}
+
 .about-text a .about-jiggle-letter {
   display: inline-block;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+  text-decoration-thickness: 0.06em;
 }
 
 .about-text a:hover .about-jiggle-letter:nth-child(3n) {
