@@ -1,0 +1,83 @@
+{
+  "items": [
+    {
+      "title": "Tour Sofoquina x F.T.C.N",
+      "location": "Spain",
+      "date": "OCT 2026",
+      "poster": "assets/images/EVENTOS/event2.jpg",
+      "mobileMeta": "Spain OCT 2026"
+    },
+    {
+      "title": "South Of North x F.T.C.N: Espacio Libre 2",
+      "location": "ISO, Amsterdam",
+      "date": "OCT 2026",
+      "poster": "assets/images/EVENTOS/event1.jpg",
+      "mobileTitle": "South Of North x F.T.C.N: Espacio Libre 1 @ ISO",
+      "mobileMeta": "Amsterdam OCT 2026"
+    },
+    {
+      "title": "Fetuxini",
+      "location": "Fase Rem, Mallorca",
+      "date": "AUG 2026",
+      "poster": "assets/images/EVENTOS/event3.jpg",
+      "mobileTitle": "Fetuxini @ Fase Rem",
+      "mobileMeta": "Mallorca AUG 2026"
+    },
+    {
+      "title": "Real No Real x F.T.C.N",
+      "location": "Lasocacion, Madrid",
+      "date": "JUN 2026",
+      "poster": "assets/images/EVENTOS/event4.jpg",
+      "mobileTitle": "Real No Real x F.T.C.N @ Lasocacion",
+      "mobileMeta": "Madrid JUN 2026"
+    },
+    {
+      "title": "Espacio Perpendicular x F.T.C.N",
+      "location": "Madrid",
+      "date": "APR 2026",
+      "poster": "assets/images/EVENTOS/event5.jpg",
+      "mobileTitle": "Espacio Perpendicular x F.T.C.N",
+      "mobileMeta": "Madrid APR 2026"
+    },
+    {
+      "title": "Musik Mattin x F.T.C.N",
+      "location": "Lasociacion, Madrid",
+      "date": "JAN 2026",
+      "poster": "assets/images/EVENTOS/event6.jpg",
+      "mobileTitle": "Musik Mattin x F.T.C.N @ Lasociacion",
+      "mobileMeta": "Madrid JAN 2026"
+    },
+    {
+      "title": "South Of North x F.T.C.N: Espacio Libre 1",
+      "location": "ISO, Amsterdam",
+      "date": "JUL 2025",
+      "poster": "assets/images/EVENTOS/event7.jpg",
+      "mobileTitle": "South Of North x F.T.C.N: Espacio Libre 1 @ ISO",
+      "mobileMeta": "Amsterdam JUL 2025"
+    },
+    {
+      "title": "F.T.C.N Ediciones",
+      "location": "Espacio Monederos, Madrid",
+      "date": "JAN 2025",
+      "poster": "assets/images/EVENTOS/event8.jpg",
+      "mobileTitle": "F.T.C.N Ediciones @ Espacio Monederos",
+      "mobileMeta": "Madrid JAN 2025"
+    },
+    {
+      "title": "South Of North x F.T.C.N",
+      "location": "ISO, Amsterdam",
+      "date": "OCT 2024",
+      "poster": "assets/images/EVENTOS/event9.jpg",
+      "mobileTitle": "South Of North x F.T.C.N @ ISO",
+      "mobileMeta": "Amsterdam OCT 2024"
+    },
+    {
+      "title": "F.T.C.N Ediciones",
+      "location": "Het Schip (Fanfare), Amsterdam",
+      "date": "JUN 2024",
+      "poster": "assets/images/EVENTOS/event10.jpg",
+      "mobileTitle": "F.T.C.N Ediciones @ Het Schip (Fanfare)",
+      "mobileMeta": "Amsterdam JUN 2024"
+    }
+  ]
+}
