@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "title": "FTCN longsleeve (white)",
+      "image": "assets/images/MERCH/LONGSLEEVEWHITE.png",
+      "alt": "FTCN white longsleeve",
+      "link": "https://fetuccini.bandcamp.com/merch/f-t-c-n-ediciones-t-shirt"
+    },
+    {
+      "title": "FTCN tee (yellow / white)",
+      "image": "assets/images/MERCH/FTCNYELLOW.png",
+      "backImage": "assets/images/MERCH/FTCNWHITE.png",
+      "alt": "FTCN yellow tee",
+      "backAlt": "FTCN white tee",
+      "link": "https://fetuccini.bandcamp.com/merch/ftcn-ediciones-label-t-shirt",
+      "soldOut": true
+    },
+    {
+      "title": "Telaraña tee",
+      "image": "assets/images/MERCH/FTCNBLACKFRONT.png",
+      "backImage": "assets/images/MERCH/FTCNBLACKBACK.png",
+      "alt": "FTCN black shirt, front",
+      "backAlt": "FTCN black shirt, back",
+      "link": "https://fetuccini.bandcamp.com/merch/telara-a-x-radioactive-lamb-t-shirt-double-cd",
+      "soldOut": true
+    }
+  ]
+}

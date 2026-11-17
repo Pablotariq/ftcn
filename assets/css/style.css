@@ -260,6 +260,15 @@ body.homepage > h1 {
   padding-bottom: 60px;
 }
 
+.cms-content-error {
+  position: relative;
+  z-index: 3;
+  margin: 1rem 15px;
+  padding: 0.75rem;
+  color: #8b0000;
+  background: #fff;
+}
+
 .releases-grid img {
   display: block;
   width: 100%;
@@ -283,14 +292,25 @@ body.homepage > h1 {
   white-space: nowrap;
 }
 
+.release-date {
+  display: block;
+  margin-top: 0.25rem;
+  opacity: 0;
+  text-align: center;
+}
+
 .releases-grid > a:hover .release-title,
 .releases-grid > a:focus-visible .release-title,
-.releases-grid > .release-item:hover .release-title {
+.releases-grid > .release-item:hover .release-title,
+.releases-grid > a:hover .release-date,
+.releases-grid > a:focus-visible .release-date,
+.releases-grid > .release-item:hover .release-date {
   opacity: 1;
 }
 
 @media (max-width: 900px) {
-  .release-title {
+  .release-title,
+  .release-date {
     opacity: 1;
   }
 }
