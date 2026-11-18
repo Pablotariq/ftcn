@@ -55,7 +55,7 @@ collections:
             summary: "{{fields.title}}"
             fields:
               - { name: title, label: Product name, widget: string }
-              - { name: image, label: Main product image, widget: image }
+              - { name: image, label: Main product image (700 × 700 / png), widget: image }
               - { name: backImage, label: Alternate image / Back image, widget: image, required: false }
               - { name: alt, label: Image description, widget: string, required: false }
               - { name: backAlt, label: Alternate image description, widget: string, required: false }
@@ -93,11 +93,11 @@ collections:
             fields:
               - { name: title, label: Entry title, widget: string }
               - name: pages
-                label: Scans, in display order (use indesign template /2953 × 2480 / 300ppi / <1mb)
+                label: Scans, in display order 
                 widget: list
                 summary: "{{fields.alt}}"
                 fields:
-                  - { name: image, label: Scan or image, widget: image }
+                  - { name: image, label: Scan or image (use indesign template /2953 × 2480 / 300ppi / <1mb), widget: image }
                   - { name: alt, label: Image description ( front/spread#/back), widget: string }
 
   - name: site-images
@@ -107,8 +107,8 @@ collections:
         label: Site images
         file: content/site-images.json
         fields:
-          - { name: homepageImage (needs to be 433 × 771), label: Homepage image, widget: image }
-          - { name: aboutImage (needs to be 433 × 771), label: About image, widget: image }
+          - { name: homepageImage, label: Homepage image  (needs to be 433 × 771), widget: image }
+          - { name: aboutImage, label: About image (needs to be 433 × 771), widget: image }
           - name: gallery
             label: Camera roll
             widget: list
