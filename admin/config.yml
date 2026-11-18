@@ -20,7 +20,6 @@ collections:
             summary: "{{fields.title}}"
             fields:
               - { name: title, label: Display title, widget: string }
-              - { name: date, label: Release date, widget: string, required: false }
               - { name: artwork, label: Cover artwork, widget: image }
               - { name: link, label: Listening or purchase link, widget: string, required: false }
 
@@ -76,7 +75,7 @@ collections:
             summary: "{{fields.title}}"
             fields:
               - { name: title, label: Mix title, widget: string }
-              - { name: source, label: Radio station or platform, widget: string }
+              - { name: source, label: Radio station or platform (add stars to make it 14 characters), widget: string }
               - { name: date, label: Date, widget: string }
               - { name: link, label: Listen link, widget: string }
 
