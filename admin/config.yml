@@ -56,7 +56,7 @@ collections:
             fields:
               - { name: title, label: Product name, widget: string }
               - { name: image, label: Main product image, widget: image }
-              - { name: backImage, label: Alternate image, widget: image, required: false }
+              - { name: backImage, label: Alternate image / Back image, widget: image, required: false }
               - { name: alt, label: Image description, widget: string, required: false }
               - { name: backAlt, label: Alternate image description, widget: string, required: false }
               - { name: link, label: Shop link, widget: string, required: false }
@@ -76,7 +76,7 @@ collections:
             fields:
               - { name: title, label: Mix title, widget: string }
               - { name: source, label: Radio station or platform (add stars to make it 14 characters), widget: string }
-              - { name: date, label: Date, widget: string }
+              - { name: date, label: Date (MON YYYY), widget: string }
               - { name: link, label: Listen link, widget: string }
 
   - name: editorial
@@ -99,3 +99,19 @@ collections:
                 fields:
                   - { name: image, label: Scan or image, widget: image }
                   - { name: alt, label: Image description, widget: string }
+
+  - name: site-images
+    label: Site images
+    files:
+      - name: site-images
+        label: Site images
+        file: content/site-images.json
+        fields:
+          - { name: homepageImage, label: Homepage image, widget: image }
+          - { name: aboutImage, label: About image, widget: image }
+          - name: gallery
+            label: Camera roll
+            widget: list
+            summary: "{{fields.image}}"
+            fields:
+              - { name: image, label: Camera-roll image, widget: image }

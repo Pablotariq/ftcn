@@ -1,72 +1,14 @@
-const galleryImages = [
-  "assets/images/gallery/gallery1.jpg",
-  "assets/images/gallery/gallery2.jpg",
-  "assets/images/gallery/gallery3.jpg",
-  "assets/images/gallery/gallery4.jpg",
-  "assets/images/gallery/gallery5.jpg",
-  "assets/images/gallery/gallery6.jpg",
-  "assets/images/gallery/gallery7.jpg",
-  "assets/images/gallery/gallery8.jpg",
-  "assets/images/gallery/gallery9.jpg",
-  "assets/images/gallery/gallery10.jpg",
-  "assets/images/gallery/gallery11.jpg",
-  "assets/images/gallery/gallery12.jpg",
-  "assets/images/gallery/gallery13.jpg",
-  "assets/images/gallery/gallery14.jpg",
-  "assets/images/gallery/gallery15.jpg",
-  "assets/images/gallery/gallery16.jpg",
-  "assets/images/gallery/gallery17.jpg",
-  "assets/images/gallery/gallery18.jpg",
-  "assets/images/gallery/gallery19.jpg",
-  "assets/images/gallery/gallery20.jpg",
-  "assets/images/gallery/gallery21.jpg",
-  "assets/images/gallery/gallery22.jpg",
-  "assets/images/gallery/gallery23.jpg",
-  "assets/images/gallery/gallery24.jpg",
-  "assets/images/gallery/gallery25.jpg",
-  "assets/images/gallery/gallery26.jpg",
-  "assets/images/gallery/gallery27.jpg",
-  "assets/images/gallery/gallery28.jpg",
-  "assets/images/gallery/gallery29.jpg",
-  "assets/images/gallery/gallery30.jpg",
-  "assets/images/gallery/gallery31.jpg",
-  "assets/images/gallery/gallery32.jpg",
-  "assets/images/gallery/gallery33.jpg",
-  "assets/images/gallery/gallery34.jpg",
-  "assets/images/gallery/gallery35.jpg",
-  "assets/images/gallery/gallery36.jpg",
-  "assets/images/gallery/gallery37.jpg",
-  "assets/images/gallery/gallery38.jpg",
-  "assets/images/gallery/gallery39.jpg",
-  "assets/images/gallery/gallery40.jpg",
-  "assets/images/gallery/gallery41.jpg",
-  "assets/images/gallery/gallery42.jpg",
-  "assets/images/gallery/gallery43.jpg",
-  "assets/images/gallery/gallery44.jpg",
-  "assets/images/gallery/gallery45.jpg",
-  "assets/images/gallery/gallery46.jpg",
-  "assets/images/gallery/gallery47.jpg",
-  "assets/images/gallery/gallery48.jpg",
-  "assets/images/gallery/gallery49.jpg",
-];
+let galleryImages = [];
+let galleryOrder = [];
+let currentGalleryImage = 0;
 
 const galleryImage = document.createElement("img");
 const gap = 20;
-const galleryOrder = galleryImages.map((_, index) => index);
-let currentGalleryImage = Math.floor(Math.random() * galleryOrder.length);
 let hasPositionedGalleryImage = false;
 let galleryCenter = null;
 let dragState = null;
 let suppressNextClick = false;
 let galleryAutoCycle = true;
-
-for (let index = galleryOrder.length - 1; index > 0; index -= 1) {
-  const randomIndex = Math.floor(Math.random() * (index + 1));
-  [galleryOrder[index], galleryOrder[randomIndex]] = [
-    galleryOrder[randomIndex],
-    galleryOrder[index],
-  ];
-}
 
 galleryImage.className = "homepage-gallery-image";
 galleryImage.alt = "FTCN gallery";
@@ -140,6 +82,7 @@ const updateGalleryPosition = (left, top) => {
 };
 
 const showNextGalleryImage = () => {
+  if (!galleryImages.length) return;
   currentGalleryImage = (currentGalleryImage + 1) % galleryOrder.length;
   galleryImage.src = galleryImages[galleryOrder[currentGalleryImage]];
 };
@@ -210,7 +153,7 @@ galleryImage.addEventListener("click", (event) => {
   showNextGalleryImage();
 });
 window.setInterval(() => {
-  if (galleryAutoCycle && !dragState) {
+  if (galleryImages.length && galleryAutoCycle && !dragState) {
     showNextGalleryImage();
   }
 }, 5000);
@@ -221,4 +164,17 @@ window.addEventListener("resize", () => {
     positionGalleryImage();
   }
 });
-showInitialGalleryImage();
+
+document.addEventListener("site-images-loaded", (event) => {
+  galleryImages = event.detail;
+  galleryOrder = galleryImages.map((_, index) => index);
+  for (let index = galleryOrder.length - 1; index > 0; index -= 1) {
+    const randomIndex = Math.floor(Math.random() * (index + 1));
+    [galleryOrder[index], galleryOrder[randomIndex]] = [
+      galleryOrder[randomIndex],
+      galleryOrder[index],
+    ];
+  }
+  currentGalleryImage = Math.floor(Math.random() * galleryOrder.length);
+  showInitialGalleryImage();
+});
