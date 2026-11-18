@@ -107,8 +107,8 @@ collections:
         label: Site images
         file: content/site-images.json
         fields:
-          - { name: homepageImage, label: Homepage image, widget: image }
-          - { name: aboutImage, label: About image, widget: image }
+          - { name: homepageImage (needs to be 433 × 771), label: Homepage image, widget: image }
+          - { name: aboutImage (needs to be 433 × 771), label: About image, widget: image }
           - name: gallery
             label: Camera roll
             widget: list
