@@ -19,7 +19,7 @@ collections:
             widget: list
             summary: "{{fields.title}}"
             fields:
-              - { name: title, label: Display title, widget: string }
+              - { name: title, label: Display title (Artist – Release Title), widget: string }
               - { name: artwork, label: Cover artwork (1000 x 1000 / 72ppi / <300kb), widget: image }
               - { name: link, label: Listening or purchase link, widget: string, required: false }
 
@@ -37,10 +37,10 @@ collections:
             fields:
               - { name: title, label: Event title, widget: string }
               - { name: location, label: Venue and location, widget: string }
-              - { name: date, label: Date, widget: string }
+              - { name: date, label: Date (MON YYYY), widget: string }
               - { name: poster, label: Poster image (595 × 842 / 72ppi / <300kb), widget: image }
-              - { name: mobileTitle, label: Short mobile title, widget: string, required: false }
-              - { name: mobileMeta, label: Short mobile location and date, widget: string, required: false }
+              - { name: mobileTitle, label: Short mobile title (only necessary if the full title is too long), widget: string, required: false }
+              - { name: mobileMeta, label: Short mobile location and date (City MON YYYY), widget: string, required: false }
 
   - name: merch
     label: Merch
