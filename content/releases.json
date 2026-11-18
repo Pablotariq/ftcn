@@ -1,6 +1,11 @@
 {
   "items": [
     {
+      "title": "Sofoquina - Versiones Variopintas",
+      "link": "https://fetuccini.bandcamp.com/album/versiones-variopintas",
+      "artwork": "assets/images/uploads/cover_sofo.jpg"
+    },
+    {
       "title": "Salade – Odd Cutlery",
       "artwork": "assets/images/RELEASES/SALADE_BC.jpg",
       "link": "https://fetuccini.bandcamp.com/album/odd-cutlery"
@@ -57,11 +62,6 @@
       "title": "Der Fetucinis – Ballinstrasse",
       "artwork": "assets/images/RELEASES/ballinstrasse.jpg",
       "link": "https://fetuccini.bandcamp.com/album/ballinstra-e"
-    },
-    {
-      "title": "blabla - title release",
-      "link": "google.com",
-      "artwork": "assets/images/uploads/a3416614141_1x1_700-copy.jpg"
     }
   ]
 }
