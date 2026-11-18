@@ -286,9 +286,14 @@ body.homepage > h1 {
 
 .release-title {
   display: block;
+  box-sizing: border-box;
+  max-width: 100%;
   margin-top: 0.5rem;
   opacity: 0;
+  overflow-x: clip;
+  overflow-y: visible;
   text-align: center;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
