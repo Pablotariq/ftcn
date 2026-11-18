@@ -3,68 +3,212 @@
     {
       "title": "Javi 1",
       "pages": [
-        { "image": "assets/images/editorial/javi1/front.jpg", "alt": "Javi 1, front cover" },
-        { "image": "assets/images/editorial/javi1/spread1.jpg", "alt": "Javi 1, spread 1" },
-        { "image": "assets/images/editorial/javi1/spread2.jpg", "alt": "Javi 1, spread 2" },
-        { "image": "assets/images/editorial/javi1/spread3.jpg", "alt": "Javi 1, spread 3" },
-        { "image": "assets/images/editorial/javi1/spread4.jpg", "alt": "Javi 1, spread 4" },
-        { "image": "assets/images/editorial/javi1/spread5.jpg", "alt": "Javi 1, spread 5" },
-        { "image": "assets/images/editorial/javi1/spread6.jpg", "alt": "Javi 1, spread 6" },
-        { "image": "assets/images/editorial/javi1/back.jpg", "alt": "Javi 1, back cover" }
+        {
+          "image": "assets/images/editorial/javi1/front.jpg",
+          "alt": "Javi 1, front cover"
+        },
+        {
+          "image": "assets/images/editorial/javi1/spread1.jpg",
+          "alt": "Javi 1, spread 1"
+        },
+        {
+          "image": "assets/images/editorial/javi1/spread2.jpg",
+          "alt": "Javi 1, spread 2"
+        },
+        {
+          "image": "assets/images/editorial/javi1/spread3.jpg",
+          "alt": "Javi 1, spread 3"
+        },
+        {
+          "image": "assets/images/editorial/javi1/spread4.jpg",
+          "alt": "Javi 1, spread 4"
+        },
+        {
+          "image": "assets/images/editorial/javi1/spread5.jpg",
+          "alt": "Javi 1, spread 5"
+        },
+        {
+          "image": "assets/images/editorial/javi1/spread6.jpg",
+          "alt": "Javi 1, spread 6"
+        },
+        {
+          "image": "assets/images/editorial/javi1/back.jpg",
+          "alt": "Javi 1, back cover"
+        }
       ]
     },
     {
       "title": "Javi 2",
       "pages": [
-        { "image": "assets/images/editorial/javi2/front.jpg", "alt": "Javi 2, front cover" },
-        { "image": "assets/images/editorial/javi2/spread1.jpg", "alt": "Javi 2, spread 1" },
-        { "image": "assets/images/editorial/javi2/spread2.jpg", "alt": "Javi 2, spread 2" },
-        { "image": "assets/images/editorial/javi2/spread3.jpg", "alt": "Javi 2, spread 3" },
-        { "image": "assets/images/editorial/javi2/spread4.jpg", "alt": "Javi 2, spread 4" },
-        { "image": "assets/images/editorial/javi2/back.jpg", "alt": "Javi 2, back cover" }
+        {
+          "image": "assets/images/editorial/javi2/front.jpg",
+          "alt": "Javi 2, front cover"
+        },
+        {
+          "image": "assets/images/editorial/javi2/spread1.jpg",
+          "alt": "Javi 2, spread 1"
+        },
+        {
+          "image": "assets/images/editorial/javi2/spread2.jpg",
+          "alt": "Javi 2, spread 2"
+        },
+        {
+          "image": "assets/images/editorial/javi2/spread3.jpg",
+          "alt": "Javi 2, spread 3"
+        },
+        {
+          "image": "assets/images/editorial/javi2/spread4.jpg",
+          "alt": "Javi 2, spread 4"
+        },
+        {
+          "image": "assets/images/editorial/javi2/back.jpg",
+          "alt": "Javi 2, back cover"
+        }
       ]
     },
     {
       "title": "FTCN 1",
       "pages": [
-        { "image": "assets/images/editorial/ftcn1/front.jpg", "alt": "FTCN 1, front cover" },
-        { "image": "assets/images/editorial/ftcn1/spread1.jpg", "alt": "FTCN 1, spread 1" },
-        { "image": "assets/images/editorial/ftcn1/spread2.jpg", "alt": "FTCN 1, spread 2" },
-        { "image": "assets/images/editorial/ftcn1/spread3.jpg", "alt": "FTCN 1, spread 3" },
-        { "image": "assets/images/editorial/ftcn1/spread4.jpg", "alt": "FTCN 1, spread 4" },
-        { "image": "assets/images/editorial/ftcn1/back.jpg", "alt": "FTCN 1, back cover" }
+        {
+          "image": "assets/images/editorial/ftcn1/front.jpg",
+          "alt": "FTCN 1, front cover"
+        },
+        {
+          "image": "assets/images/editorial/ftcn1/spread1.jpg",
+          "alt": "FTCN 1, spread 1"
+        },
+        {
+          "image": "assets/images/editorial/ftcn1/spread2.jpg",
+          "alt": "FTCN 1, spread 2"
+        },
+        {
+          "image": "assets/images/editorial/ftcn1/spread3.jpg",
+          "alt": "FTCN 1, spread 3"
+        },
+        {
+          "image": "assets/images/editorial/ftcn1/spread4.jpg",
+          "alt": "FTCN 1, spread 4"
+        },
+        {
+          "image": "assets/images/editorial/ftcn1/back.jpg",
+          "alt": "FTCN 1, back cover"
+        }
       ]
     },
     {
       "title": "FTCN 2",
       "pages": [
-        { "image": "assets/images/editorial/ftcn2/front.jpg", "alt": "FTCN 2, front cover" },
-        { "image": "assets/images/editorial/ftcn2/spread1.jpg", "alt": "FTCN 2, spread 1" },
-        { "image": "assets/images/editorial/ftcn2/spread2.jpg", "alt": "FTCN 2, spread 2" },
-        { "image": "assets/images/editorial/ftcn2/spread3.jpg", "alt": "FTCN 2, spread 3" },
-        { "image": "assets/images/editorial/ftcn2/back.jpg", "alt": "FTCN 2, back cover" }
+        {
+          "image": "assets/images/editorial/ftcn2/front.jpg",
+          "alt": "FTCN 2, front cover"
+        },
+        {
+          "image": "assets/images/editorial/ftcn2/spread1.jpg",
+          "alt": "FTCN 2, spread 1"
+        },
+        {
+          "image": "assets/images/editorial/ftcn2/spread2.jpg",
+          "alt": "FTCN 2, spread 2"
+        },
+        {
+          "image": "assets/images/editorial/ftcn2/spread3.jpg",
+          "alt": "FTCN 2, spread 3"
+        },
+        {
+          "image": "assets/images/editorial/ftcn2/back.jpg",
+          "alt": "FTCN 2, back cover"
+        }
       ]
     },
     {
       "title": "FTCN 3",
       "pages": [
-        { "image": "assets/images/editorial/ftcn3/front.jpg", "alt": "FTCN 3, front cover" },
-        { "image": "assets/images/editorial/ftcn3/spread1.jpg", "alt": "FTCN 3, spread 1" },
-        { "image": "assets/images/editorial/ftcn3/spread2.jpg", "alt": "FTCN 3, spread 2" },
-        { "image": "assets/images/editorial/ftcn3/spread3.jpg", "alt": "FTCN 3, spread 3" },
-        { "image": "assets/images/editorial/ftcn3/back.jpg", "alt": "FTCN 3, back cover" }
+        {
+          "image": "assets/images/editorial/ftcn3/front.jpg",
+          "alt": "FTCN 3, front cover"
+        },
+        {
+          "image": "assets/images/editorial/ftcn3/spread1.jpg",
+          "alt": "FTCN 3, spread 1"
+        },
+        {
+          "image": "assets/images/editorial/ftcn3/spread2.jpg",
+          "alt": "FTCN 3, spread 2"
+        },
+        {
+          "image": "assets/images/editorial/ftcn3/spread3.jpg",
+          "alt": "FTCN 3, spread 3"
+        },
+        {
+          "image": "assets/images/editorial/ftcn3/back.jpg",
+          "alt": "FTCN 3, back cover"
+        }
       ]
     },
     {
       "title": "Birthday",
       "pages": [
-        { "image": "assets/images/editorial/bday/front.jpg", "alt": "Birthday, front cover" },
-        { "image": "assets/images/editorial/bday/spread1.jpg", "alt": "Birthday, spread 1" },
-        { "image": "assets/images/editorial/bday/spread2.jpg", "alt": "Birthday, spread 2" },
-        { "image": "assets/images/editorial/bday/spread3.jpg", "alt": "Birthday, spread 3" },
-        { "image": "assets/images/editorial/bday/spread4.jpg", "alt": "Birthday, spread 4" },
-        { "image": "assets/images/editorial/bday/spread5.jpg", "alt": "Birthday, spread 5" },
-        { "image": "assets/images/editorial/bday/back.jpg", "alt": "Birthday, back cover" }
+        {
+          "image": "assets/images/editorial/bday/front.jpg",
+          "alt": "Birthday, front cover"
+        },
+        {
+          "image": "assets/images/editorial/bday/spread1.jpg",
+          "alt": "Birthday, spread 1"
+        },
+        {
+          "image": "assets/images/editorial/bday/spread2.jpg",
+          "alt": "Birthday, spread 2"
+        },
+        {
+          "image": "assets/images/editorial/bday/spread3.jpg",
+          "alt": "Birthday, spread 3"
+        },
+        {
+          "image": "assets/images/editorial/bday/spread4.jpg",
+          "alt": "Birthday, spread 4"
+        },
+        {
+          "image": "assets/images/editorial/bday/spread5.jpg",
+          "alt": "Birthday, spread 5"
+        },
+        {
+          "image": "assets/images/editorial/bday/back.jpg",
+          "alt": "Birthday, back cover"
+        }
+      ]
+    },
+    {
+      "title": "Test",
+      "pages": [
+        {
+          "image": "assets/images/uploads/ftcn-web-scans-editorial.jpg",
+          "alt": "front"
+        },
+        {
+          "image": "assets/images/uploads/ftcn-web-scans-editorial2.jpg",
+          "alt": "spread 1"
+        },
+        {
+          "image": "assets/images/uploads/ftcn-web-scans-editorial3.jpg",
+          "alt": "spread 2"
+        },
+        {
+          "image": "assets/images/uploads/ftcn-web-scans-editorial4.jpg",
+          "alt": "spread 3"
+        },
+        {
+          "image": "assets/images/uploads/ftcn-web-scans-editorial5.jpg",
+          "alt": " spread 4"
+        },
+        {
+          "image": "assets/images/uploads/ftcn-web-scans-editorial6.jpg",
+          "alt": "spread 5"
+        },
+        {
+          "image": "assets/images/uploads/ftcn-web-scans-editorial7.jpg",
+          "alt": "back"
+        }
       ]
     }
   ]
