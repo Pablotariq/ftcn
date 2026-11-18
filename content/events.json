@@ -1,6 +1,14 @@
 {
   "items": [
     {
+      "title": "Musik Mattin",
+      "location": "Nave Verbena, Madrid",
+      "date": "NOV 2026",
+      "poster": "assets/images/uploads/cartel-final-a3-ftcn-y-control.jpg",
+      "mobileTitle": "Fetuxini @ Musik Mattin",
+      "mobileMeta": "Madrid NOV 2026"
+    },
+    {
       "title": "Tour Sofoquina x F.T.C.N",
       "location": "Spain",
       "date": "OCT 2026",
@@ -16,8 +24,8 @@
       "mobileMeta": "Amsterdam OCT 2026"
     },
     {
-      "title": "Fetuxini",
-      "location": "Fase Rem, Mallorca",
+      "title": "Fase Rem Festival",
+      "location": "Portol, Mallorca",
       "date": "AUG 2026",
       "poster": "assets/images/EVENTOS/event3.jpg",
       "mobileTitle": "Fetuxini @ Fase Rem",
