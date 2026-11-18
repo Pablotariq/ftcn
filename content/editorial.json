@@ -177,6 +177,35 @@
           "alt": "Birthday, back cover"
         }
       ]
+    },
+    {
+      "title": "Conducto ventilacion",
+      "pages": [
+        {
+          "alt": "front",
+          "image": "assets/images/uploads/editorial_javi.jpg"
+        },
+        {
+          "alt": "spread 1",
+          "image": "assets/images/uploads/editorial_javi2.jpg"
+        },
+        {
+          "alt": "spread 2",
+          "image": "assets/images/uploads/editorial_javi3.jpg"
+        },
+        {
+          "alt": "spread 3",
+          "image": "assets/images/uploads/editorial_javi4.jpg"
+        },
+        {
+          "alt": "spread 4",
+          "image": "assets/images/uploads/editorial_javi5.jpg"
+        },
+        {
+          "alt": "Back",
+          "image": "assets/images/uploads/editorial_javi6.jpg"
+        }
+      ]
     }
   ]
 }
