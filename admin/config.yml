@@ -20,7 +20,7 @@ collections:
             summary: "{{fields.title}}"
             fields:
               - { name: title, label: Display title, widget: string }
-              - { name: artwork, label: Cover artwork, widget: image }
+              - { name: artwork, label: Cover artwork (1000 x 1000 / 72ppi / <300kb), widget: image }
               - { name: link, label: Listening or purchase link, widget: string, required: false }
 
   - name: events
@@ -38,7 +38,7 @@ collections:
               - { name: title, label: Event title, widget: string }
               - { name: location, label: Venue and location, widget: string }
               - { name: date, label: Date, widget: string }
-              - { name: poster, label: Poster image, widget: image }
+              - { name: poster, label: Poster image (595 × 842 / 72ppi / <300kb), widget: image }
               - { name: mobileTitle, label: Short mobile title, widget: string, required: false }
               - { name: mobileMeta, label: Short mobile location and date, widget: string, required: false }
 
@@ -93,12 +93,12 @@ collections:
             fields:
               - { name: title, label: Entry title, widget: string }
               - name: pages
-                label: Scans, in display order
+                label: Scans, in display order (use indesign template /2953 × 2480 / 300ppi / <1mb)
                 widget: list
                 summary: "{{fields.alt}}"
                 fields:
                   - { name: image, label: Scan or image, widget: image }
-                  - { name: alt, label: Image description, widget: string }
+                  - { name: alt, label: Image description ( front/spread#/back), widget: string }
 
   - name: site-images
     label: Site images
